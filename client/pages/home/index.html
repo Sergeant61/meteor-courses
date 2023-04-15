@@ -1,0 +1,62 @@
+<template name="pagesHome">
+
+  <h1>Naber</h1>
+
+  {{name}}
+
+  <br>
+  <br>
+
+  {{#if eq '1' '1'}}
+    <div>Valid</div>
+  {{else}}
+    <div>Not Valid</div>
+  {{/if}}
+
+  {{#unless eq '1' '0'}}
+    <span>Not Valid</span>
+  {{/unless}}
+
+  <ul>
+    <li>1. Item</li>
+    <li>2. Item</li>
+    <li>3. Item</li>
+    <li>4. Item</li>
+  </ul>
+
+  <ul>
+    {{#each cars}}
+      <li>{{@index}}. {{name}} {{model}}</li>
+    {{/each}}
+  </ul>
+
+  {{#let upperCaseName=(upperCase name)   }}
+
+    <h4>{{upperCaseName}}</h4>
+
+  {{/let}}
+
+  <button class="brd-btn-click" id="event">Click</button>
+
+  <!-- {{#with car}}
+    {{../name}}
+    {{name}}
+    {{model}}
+  {{/with}}
+
+  {{#with cars}}
+    {{../name}}
+
+    <span>{{xxx}}</span>
+
+    <ul>
+      {{#each this}}
+        {{../../name}}
+
+        <li>{{@index}}. {{name}} {{model}}</li>
+      {{/each}}
+    </ul>
+  {{/with}} -->
+
+
+</template>
