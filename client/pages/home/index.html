@@ -1,44 +1,46 @@
 <template name="pagesHome">
 
-  <h1>Naber</h1>
+  <div class="pagesHome">
 
-  {{name}}
+    <h1>Naber</h1>
 
-  <br>
-  <br>
+    {{name}}
 
-  {{#if eq '1' '1'}}
-    <div>Valid</div>
-  {{else}}
-    <div>Not Valid</div>
-  {{/if}}
+    <br>
+    <br>
 
-  {{#unless eq '1' '0'}}
-    <span>Not Valid</span>
-  {{/unless}}
+    {{#if eq '1' '1'}}
+      <div>Valid</div>
+    {{else}}
+      <div>Not Valid</div>
+    {{/if}}
 
-  <ul>
-    <li>1. Item</li>
-    <li>2. Item</li>
-    <li>3. Item</li>
-    <li>4. Item</li>
-  </ul>
+    {{#unless eq '1' '0'}}
+      <span>Not Valid</span>
+    {{/unless}}
 
-  <ul>
-    {{#each cars}}
-      <li>{{@index}}. {{name}} {{model}}</li>
-    {{/each}}
-  </ul>
+    <ul>
+      <li>1. Item</li>
+      <li>2. Item</li>
+      <li>3. Item</li>
+      <li>4. Item</li>
+    </ul>
 
-  {{#let upperCaseName=(upperCase name)   }}
+    <ul>
+      {{#each cars}}
+        <li>{{@index}}. {{name}} {{model}}</li>
+      {{/each}}
+    </ul>
 
-    <h4>{{upperCaseName}}</h4>
+    {{#let upperCaseName=(upperCase name)   }}
 
-  {{/let}}
+      <h4>{{upperCaseName}}</h4>
 
-  <button class="brd-btn-click" id="event">Click</button>
+    {{/let}}
 
-  <!-- {{#with car}}
+    <button class="brd-btn-click" id="event">Click</button>
+
+    <!-- {{#with car}}
     {{../name}}
     {{name}}
     {{model}}
@@ -58,5 +60,6 @@
     </ul>
   {{/with}} -->
 
+  </div>
 
 </template>

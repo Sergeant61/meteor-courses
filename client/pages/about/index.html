@@ -1,11 +1,25 @@
 <template name="pagesAbout">
 
-  {{./cars}}
+  <div class="py-5">
+    {{./cars}}
 
-  <ul>
-    {{#each cars}}
-      <li>{{brand}}</li>
-    {{/each}}
-  </ul>
+    <ul>
+      {{#each cars}}
+        <li>{{brand}}</li>
+      {{/each}}
+    </ul>
+
+    {{#if eq name 'recep'}}
+      recep a eşit
+    {{else}}
+      recep a eşit değil
+    {{/if}}
+
+    {{currencyFormat 10 'TRY'}}
+
+    <br>
+    <br>
+    {{formatDateTime day}}
+  </div>
 
 </template>
