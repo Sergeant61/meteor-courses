@@ -1,0 +1,11 @@
+<template name="publicLayoutsDefault">
+  <div class="publicLayoutsDefault d-flex flex-column vh-100">
+    {{> componentsNavbar}}
+
+    <div class="flex-fill bg-secondary container py-2">
+      {{> Template.dynamic template=page}}
+    </div>
+
+    {{> componentsFooter}}
+  </div>
+</template>

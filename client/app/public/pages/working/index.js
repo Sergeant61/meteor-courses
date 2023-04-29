@@ -24,9 +24,13 @@ Template.pagesWorking.onRendered(function () {
   })
 
   this.autorun(function () {
-    const todos = Todos.find().fetch()
 
-    console.log(todos)
+    Meteor.call('todos', {_id: 1}, function(error, result) { 
+
+    console.log(error, result)
+
+    });
+
   })
 })
 
@@ -48,6 +52,6 @@ Template.pagesWorking.events({
     template.maps.set('count', template.count.get('count') + 1)
   },
   'click .brd-insert': function (event, template) {
-    Todos.insert({ name: 'my-todo' })
+    Todos.insert({ title: 'my-todo', state:'in-process' })
   },
 })

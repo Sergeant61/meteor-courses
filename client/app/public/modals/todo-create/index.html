@@ -1,0 +1,30 @@
+<template name="publicModalsTodoCreate">
+  <div class="modal" id="brdPublicModalsTodoCreateModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Todo Create</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+          <form id="brdPublicModalsTodoCreateForm" class="d-flex flex-column gap-2">
+            <div class="form-floating">
+              <input type="text" class="form-control" name="title" id="publicModalsTodoCreateInputTitle">
+              <label for="publicModalsTodoCreateInputTitle">Title</label>
+            </div>
+
+            <div class="form-floating">
+              <textarea class="form-control" name="description" id="publicModalsTodoCreateInputDescription" style="height: 100px"></textarea>
+              <label for="publicModalsTodoCreateInputDescription">Description</label>
+            </div>
+          </form>
+
+        </div>
+        <div class="modal-footer">
+          <button type="submit" form="brdPublicModalsTodoCreateForm" class="btn btn-primary">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
