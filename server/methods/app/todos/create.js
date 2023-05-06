@@ -9,7 +9,11 @@ new ValidatedMethod({
     this.unblock()
     const { todo } = data
 
+    const now = new Date()
+
     todo.state = 'in-process'
+    todo.createdAt = now
+    todo.updatedAt = now
     return Todos.insert(todo)
   },
 })

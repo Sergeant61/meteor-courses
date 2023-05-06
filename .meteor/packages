@@ -43,3 +43,5 @@ meteorhacks:picker
 littledata:synced-cron
 
 aldeed:collection2
+meteortesting:mocha
+# bordo:auto-dates

@@ -1,0 +1,49 @@
+<template name="publicModalsTodoUpdate">
+
+  {{#let _todo=(appUtil.temp.get 'todo')}}
+    <div class="modal" id="brdPublicModalsTodoUpdateModal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Todo Update</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+
+            <form id="brdPublicModalsTodoUpdateForm" class="d-flex flex-column gap-2">
+              <div class="form-floating">
+                <input type="text" class="form-control" name="title" id="publicModalsTodoUpdateInputTitle" value="{{_todo.title}}">
+                <label for="publicModalsTodoUpdateInputTitle">Title</label>
+              </div>
+
+              <div class="form-floating">
+                <textarea class="form-control" name="description" id="publicModalsTodoUpdateInputDescription" style="height: 100px">{{_todo.description}}</textarea>
+                <label for="publicModalsTodoUpdateInputDescription">Description</label>
+              </div>
+
+              <div class="form-floating">
+                <select class="form-select" id="publicModalsTodoUpdateInputState" name="state">
+                  {{#if eq _todo.state 'in-process'}}
+                    <option value="in-process" selected>In process</option>
+                    <option value="done">Done</option>
+                  {{/if}}
+
+                  {{#if eq _todo.state 'done'}}
+                    <option value="in-process">In process</option>
+                    <option value="done" selected>Done</option>
+                  {{/if}}
+                </select>
+                <label for="publicModalsTodoUpdateInputState">State</label>
+              </div>
+            </form>
+
+          </div>
+          <div class="modal-footer">
+            <button type="submit" form="brdPublicModalsTodoUpdateForm" class="btn btn-primary">Update</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  {{/let}}
+</template>

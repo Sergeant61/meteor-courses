@@ -21,10 +21,17 @@ FlowRouter.route('/working', {
   }
 });
 
-FlowRouter.route('/Todos', {
+FlowRouter.route('/todos', {
   name: 'public.todos',
   action: function (params, queryParams) {
     this.render('publicLayoutsDefault', { page: 'pagesTodos' });
+  }
+});
+
+FlowRouter.route('/chat', {
+  name: 'public.chat',
+  action: function (params, queryParams) {
+    this.render('publicLayoutsDefault', { page: 'pagesChat' });
   }
 });
 

@@ -15,8 +15,14 @@
               <h5 class="card-title">{{title}}</h5>
               <p class="card-text">{{description}}</p>
             </div>
-            <div class="card-footer">
-              <small class="text-muted">Last updated 3 mins ago</small>
+            <div class="card-footer d-flex justify-content-between gap-2">
+
+              <small class="text-muted">{{formatDateTime updatedAt}}</small>
+
+              <div class="btn-group btn-group-sm" role="group" aria-label="Basic mixed styles example">
+                <button type="button" class="btn btn-danger brd-todo-delete"><i class="fas fa-trash-alt fa-fw"></i></button>
+                <button type="button" class="btn btn-warning brd-todo-update"><i class="fas fa-pencil-alt fa-fw"></i></button>
+              </div>
             </div>
           </div>
         </div>
@@ -29,4 +35,5 @@
   {{/let}}
 
   {{> publicModalsTodoCreate}}
+  {{> publicModalsTodoUpdate}}
 </template>
