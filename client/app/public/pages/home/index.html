@@ -40,6 +40,19 @@
 
     <button class="brd-btn-click" id="event">Click</button>
 
+    <div class="d-flex gap-2">
+
+      <img src="https://horoscopes.astro-seek.com/horoscope-chart1__radix_3-12-1995_12-00.png?fortune_seda=1&fortune_asp=1&chiron_asp=1&lilith_asp=1&uzel_asp=1&dum_1_new=296.85251630434&dum_10_new=232.26283510696&no_domy=1&dum_1=0&dum_2=30&dum_3=60&dum_4=90&dum_5=120&dum_6=150&pd_1=ANO&pd_9=ANO&pd_10=ANO&pd_12=ANO&planeta_slunce=250.58805144687&planeta_luna=28.1032586625&planeta_merkur=256.16154734688&planeta_venuse=277.06767828281&planeta_mars=272.02322654453&planeta_jupiter=262.94272097266&planeta_saturn=348.11201796953&planeta_uran=297.88164495078&planeta_neptun=293.70575995156&planeta_pluto=240.88937654062&planeta_uzel=203.96056595938&planeta_lilith=97.272374116406&planeta_chiron=191.32428672187&planeta_fortune=74.367723519965&r_uzel=ANO&tolerance=1&tolerance_paral=1.2&house_system=none&narozeni_den=3&narozeni_mesic=12&narozeni_rok=1995&narozeni_hodina=12&narozeni_minuta=00&narozeni_mesto_hidden=Manuel:%20%C2%B0%27N,%20%C2%B0%27E&narozeni_stat_hidden&narozeni_podstat_kratky_hidden&narozeni_city=Kartal&narozeni_sirka_stupne=43&narozeni_sirka_minuty=18&narozeni_sirka_smer=0&narozeni_delka_stupne=68&narozeni_delka_minuty=15&narozeni_delka_smer=0&narozeni_timezone_form=auto&narozeni_timezone_dst_form=auto&tvar_ukazat" alt="">
+
+      {{#with state.get 'test'}}
+        <img src="{{link}}" alt="">
+      {{/with}}
+  
+
+    </div>
+
+
+
     <!-- {{#with car}}
     {{../name}}
     {{name}}
