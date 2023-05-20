@@ -14,7 +14,10 @@ App.info({
 App.setPreference('Orientation', 'portrait')
 App.setPreference('target-device', 'handset')
 App.setPreference('deployment-target', '13.0')
-App.setPreference('android-targetSdkVersion', '31')
+App.setPreference('android-targetSdkVersion', '30')
+App.configurePlugin('cordova-plugin-autostart', {
+  AUTO_START: true,
+})
 
 App.appendToConfig(`
   <edit-config target="NSLocationWhenInUseUsageDescription" file="*-Info.plist" mode="merge">
@@ -24,4 +27,15 @@ App.appendToConfig(`
   <edit-config target="NSCameraUsageDescription" file="*-Info.plist" mode="merge">
     <string>Resim ve Video gönderme sırasında kameranızı kullanıyoruz.</string>
   </edit-config>
+
+  <config-file parent="/manifest" target="AndroidManifest.xml" xmlns:android="http://schemas.android.com/apk/res/android"> 
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" /> 
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" /> 
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" /> 
+    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" /> 
+  </config-file>
+
+  <preference name="AndroidInsecureFileModeEnabled" value="true" />
+
+  <plugin name="phonegap-plugin-barcodescanner" />
 `)

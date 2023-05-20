@@ -1,29 +1,22 @@
+Meteor.startup(function () {
+  if (Meteor.isCordova) {
+    // Wait for the device to be ready
+    document.addEventListener(
+      'deviceready',
+      function () {
+        // Autostart plugin
+        console.log(window);
+        const permissions = cordova.plugins.permissions;
 
-/**
- * JavaScript asenkron çalışan bir script dilidir.
- */
-const printLog = function () {
-  let message = 'a'
+        permissions.checkPermission(permissions.RECEIVE_BOOT_COMPLETED, function (status) {
+          console.log(status);
+        }, function (error) {
+          console.log(error);
+        });
 
-  setTimeout(function () {
-    message = 'b'
-  }, 100)
-
-  console.log(message)
-}
-
-const printLogAsync = async function () {
-  let message = 'a'
-
-  await new Promise(function (resolve, reject) {
-    setTimeout(function () {
-      message = 'b'
-      resolve()
-    }, 100)
-  })
-
-  console.log(message)
-}
-
-printLog()
-printLogAsync()
+        cordova.plugins.autoStart.enable();
+      },
+      false
+    )
+  }
+})

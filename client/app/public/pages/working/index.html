@@ -1,7 +1,14 @@
 <template name="pagesWorking">
 
+  <button id="text">Text</button>
+  <button id="qr">Qr</button>
+  <img id="myImage" width="200" height="200">
 
-  
-
-
+  {{#with state.get 'texts'}}
+    <ul class="list-group overflow-auto" style="height: 400px;">
+      {{#each this}}
+        <li class="list-group-item">{{this}}</li>
+      {{/each}}
+    </ul>
+  {{/with}}
 </template>
