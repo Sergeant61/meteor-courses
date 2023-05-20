@@ -44,4 +44,8 @@ littledata:synced-cron
 
 aldeed:collection2
 meteortesting:mocha
+bordo:loading
+bordo:loading-section
+bordo:loading-line
+
 # bordo:auto-dates

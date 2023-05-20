@@ -30,6 +30,7 @@ FlowRouter.route('/todos', {
 
 FlowRouter.route('/chat', {
   name: 'public.chat',
+  triggersEnter: [MustSignIn],
   action: function (params, queryParams) {
     this.render('publicLayoutsDefault', { page: 'pagesChat' });
   }

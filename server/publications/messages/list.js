@@ -1,4 +1,7 @@
 Meteor.publish('messages.list', function (data) {
-
-  return Messages.find({})
+  if (this.userId) {
+    return Messages.find({})
+  } else {
+    return this.ready()
+  }
 })

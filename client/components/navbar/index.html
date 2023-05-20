@@ -20,10 +20,13 @@
             <a class="nav-link {{isActiveRoute 'public.chat'}}" href="{{pathFor 'public.chat'}}">Chat</a>
           </li>
         </ul>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
+
+        {{#if currentUser}}
+          <button class="btn btn-info me-2">Profile</button>
+          <button class="btn btn-danger brd-sign-out">Sign out</button>
+        {{else}}
+          <a href="{{pathFor 'auth.signIn'}}" class="btn btn-success">Sign in/up</a>
+        {{/if}}
       </div>
     </div>
   </nav>
