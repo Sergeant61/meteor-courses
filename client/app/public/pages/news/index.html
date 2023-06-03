@@ -1,0 +1,71 @@
+<template name="pagesNews">
+
+  {{#let _news=(state.get 'news') _country=(state.get 'country') _tag=(state.get 'tag')}}
+
+
+    <div class="container py-2">
+
+      <div class="row mb-2">
+        <div class="d-flex gap-2 justify-content-end">
+          <select class="form-select" id="brdPagesNewsCountrySelect">
+            <option selected>Open this select menu</option>
+            {{#each counties}}
+              {{#if eq key _country}}
+                <option value="{{key}}" selected>{{title}}</option>
+              {{else}}
+                <option value="{{key}}">{{title}}</option>
+              {{/if}}
+            {{/each}}
+          </select>
+
+          <select class="form-select" id="brdPagesNewsTagSelect">
+            <option selected>Open this select menu</option>
+            {{#each tags}}
+              {{#if eq key _tag}}
+                <option value="{{key}}" selected>{{title}}</option>
+              {{else}}
+                <option value="{{key}}">{{title}}</option>
+              {{/if}}
+            {{/each}}
+          </select>
+        </div>
+
+      </div>
+
+      <div class="row justify-content-center g-3 h-100">
+        {{#each _news}}
+          <div class="col-sm-12 col-md-6 col-lg-4">
+
+            <div class="card h-100">
+              <img src="{{image}}" class="card-img-top" style="height: 200px;object-fit: cover;" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">{{name}}</h5>
+                <p class="card-text">{{description}}</p>
+                <p class="card-text">{{source}}</p>
+              </div>
+              <div class="card-footer d-flex">
+                <small class="text-muted">{{formatDateTime date}}</small>
+                <a class="ms-auto" href="{{url}}" target="_blank">Go News</a>
+              </div>
+            </div>
+
+          </div>
+        {{/each}}
+
+
+        {{#if eq _news.length 0}}
+
+        <div class="py-5 text-center p-3 bg-white rounded-3" style="width: 300px;">
+          <h5 class="fw-bold">Sonuç Bulunamadı</h5>
+          <p class="fst-italic">Arama değerlerinize uygun sonuç bulunamadı</p>
+        </div>
+        
+                            
+        {{/if}}
+      </div>
+
+    </div>
+
+  {{/let}}
+
+</template>

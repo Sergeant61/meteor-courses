@@ -13,11 +13,16 @@
     </ul>
 
 
-
-
     <button class="btn btn-primary brd-add mb-2">Add</button>
     <button class="btn btn-primary brd-insert">Insert</button>
 
   </div>
+
+  <div class="input-group mb-3">
+    <label class="input-group-text" for="brPagesWorkingPPFileInput">Upload</label>
+    <input type="file" class="form-control" id="brPagesWorkingPPFileInput">
+  </div>
+
+  <img src="{{state.get 'base64PP'}}" width="500" height="500" >
 
 </template>

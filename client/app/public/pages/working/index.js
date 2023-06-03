@@ -1,4 +1,8 @@
 Template.pagesWorking.onCreated(function () {
+  this.state = new ReactiveDict(null, {
+    base64PP: null,
+  });
+
   this.count = new ReactiveVar(0)
 
   this.maps = new ReactiveDict(null, {
@@ -6,6 +10,19 @@ Template.pagesWorking.onCreated(function () {
     lastname: 'Özen',
     count: 0,
   })
+
+  this.getBase64 = function (file) {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = function () {
+        resolve(reader.result);
+      };
+      reader.onerror = function (error) {
+        reject( error);
+      };
+    })
+  }
 })
 
 Template.pagesWorking.onRendered(function () {
@@ -53,5 +70,11 @@ Template.pagesWorking.events({
   },
   'click .brd-insert': function (event, template) {
     Todos.insert({ title: 'my-todo', state:'in-process' })
+  },
+  'change #brPagesWorkingPPFileInput': async function (event, template) {
+
+    console.log(event.target.files);
+
+    template.state.set('base64PP', await template.getBase64(event.target.files[0]))  
   },
 })

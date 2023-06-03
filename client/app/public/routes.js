@@ -36,6 +36,14 @@ FlowRouter.route('/chat', {
   }
 });
 
+FlowRouter.route('/news', {
+  name: 'public.news',
+  triggersEnter: [MustSignIn],
+  action: function (params, queryParams) {
+    this.render('publicLayoutsDefault', { page: 'pagesNews' });
+  }
+});
+
 FlowRouter.route('*', {
   action() {
     this.render('notFound');

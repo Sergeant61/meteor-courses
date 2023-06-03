@@ -1,29 +1,29 @@
 
-/**
- * JavaScript asenkron çalışan bir script dilidir.
- */
-const printLog = function () {
-  let message = 'a'
+// /**
+//  * JavaScript asenkron çalışan bir script dilidir.
+//  */
+// const printLog = function () {
+//   let message = 'a'
 
-  setTimeout(function () {
-    message = 'b'
-  }, 100)
+//   setTimeout(function () {
+//     message = 'b'
+//   }, 100)
 
-  console.log(message)
-}
+//   console.log(message)
+// }
 
-const printLogAsync = async function () {
-  let message = 'a'
+// const printLogAsync = async function () {
+//   let message = 'a'
 
-  await new Promise(function (resolve, reject) {
-    setTimeout(function () {
-      message = 'b'
-      resolve()
-    }, 100)
-  })
+//   await new Promise(function (resolve, reject) {
+//     setTimeout(function () {
+//       message = 'b'
+//       resolve()
+//     }, 100)
+//   })
 
-  console.log(message)
-}
+//   console.log(message)
+// }
 
-printLog()
-printLogAsync()
+// printLog()
+// printLogAsync()
